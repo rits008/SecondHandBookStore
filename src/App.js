@@ -15,7 +15,8 @@ import Preloader from "./Pre";
 import ScrollToTop from "./ScrollToTop";
 import About from "./About/About";
 import Register from "./components/home/Register";
-
+import Description from "./cards/Description";
+import Sell from "./sellbook/Sell";
 function App() {
 
   const [load, upadateLoad] = useState(true);
@@ -44,6 +45,8 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/description" component={Description} />
+          <Route path="/sellbook" component={Sell} />
 
           
         </Switch>

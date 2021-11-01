@@ -6,6 +6,7 @@ import {
   FormControlLabel,
   LinearProgress,
 } from "@mui/material";
+import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core";
@@ -15,8 +16,13 @@ import MyButton from "../../base/MyButton";
 import MyAlert from "../../base/MyAlert";
 /* import api from "../../network/";  */
 import { Link } from "react-router-dom";
+
+// Import the functions you need from the SDKs you need
+// Initialize Fireba
 import { useHistory } from "react-router-dom";
 //import { useAppState } from "../../state"; 
+
+
 
 function Login() {
   const classes = useStyles();
@@ -27,10 +33,28 @@ function Login() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState({});
   //const { dispatch } = useAppState();
+  
+  useEffect(() => {
 
- 
+    
+        // const url = "https://rajgupta123.pythonanywhere.com/books?format=json";
 
-  const [employee, setemployee] = useState({ Email: '', Password: ''});  
+        const fetchBooks = async ()=>{
+
+            const res= await axios.get("https://rajgupta123.pythonanywhere.com/books?format=json");      
+            console.log(res);
+        }
+       
+        fetchBooks();
+    }
+
+
+    
+, [])
+
+
+
+  /* const [employee, setemployee] = useState({ Email: '', Password: ''});  
     const apiUrl = "http://marketphp.lovestoblog.com/login.php";    
     const Login = (e) => {    
             e.preventDefault();    
@@ -50,7 +74,7 @@ function Login() {
                 else    
                 alert('Invalid User');    
             })        
-          };   
+          };  */  
 
 
 

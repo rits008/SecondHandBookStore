@@ -10,9 +10,9 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
+import {MdOutlineContactMail,MdSell} from "react-icons/md"
 import { CgFileDocument } from "react-icons/cg";
-
+import {FiLogIn} from "react-icons/fi";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
@@ -76,24 +76,35 @@ function NavBar() {
                 to="/contact"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineFundProjectionScreen
+                <MdOutlineContactMail
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Contact
               </Nav.Link>
             </Nav.Item>
-            
+             
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/sellbook"
+                onClick={() => updateExpanded(false)}
+              >
+                <MdSell style={{ marginBottom: "2px" }} /> SellBook
+              </Nav.Link>
+            </Nav.Item> 
+
+
+
             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/login"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Login
+                <FiLogIn style={{ marginBottom: "2px" }} /> Login
               </Nav.Link>
             </Nav.Item>
-          
-
           </Nav>
         </Navbar.Collapse>
       </Container>
